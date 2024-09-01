@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/input.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Book Haven</title>
+</head>
+
+<body class="bg-black text-white">
+    <div class="flex justify-center items-center h-auto m-12">
+        <div class="flex flex-col justify-center items-center space-y-12">
+            <div class="text-4xl ">BookHeaven</div>
+            <form action="/mybooks" method="post" class="grid grid-cols-4 gap-5">
+                <% for(let i=0; i<users.length; i++) { %>
+                    <button type="submit" class="border-2 rounded-lg w-48 h-48 justify-center items-center" name="userId" value="<%=id[i]%>"><%= users[i] %></button>
+                    <% } %>
+            </form>
+        </div>
+    </div>
+    <form action="/addordeleteuser" method="post" class="flex justify-center items-center space-x-3 pb-20">
+        <button type="submit" name="opt" value="del"><img src="icons/delete.png" alt=""></button>
+        <input type="text" name="username" placeholder="username" class="border-2 rounded-xl text-black px-5">
+        <button type="submit" name="opt" value="add"><img src="icons/add.png" alt=""></button>
+    </form>
+</body>
+
+</html>
+
+

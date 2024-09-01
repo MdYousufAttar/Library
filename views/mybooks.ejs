@@ -1,0 +1,18 @@
+<%- include("partials/header.ejs") %>
+
+
+    <form action="/openBook" method="POST" class="m-auto grid grid-cols-4 gap-5 gap-y-14">
+        <% for(let i=0; i<title.length; i++) {%>
+            <button type="submit" name="title" value="<%= title[i] %>" class="space-y-6 w-48 h-auto justify-center items-center">
+                <img src="https://covers.openlibrary.org/b/id/<%= cover_i[i] %>-L.jpg" alt="####"
+                    class="border-2 rounded-lg" name="cover-id" value="<%= cover_i[i] %>">
+                <p>
+                    <%= title[i] %>
+                </p>
+            </button>
+            <% } %>
+    </form>
+
+    </body>
+
+    </html>

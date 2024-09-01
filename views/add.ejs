@@ -1,0 +1,32 @@
+<%- include("partials/header.ejs") %>
+
+  <div class="flex items-center justify-center h-max">
+
+    <form action="/addordelete" method="post" class="flex flex-col w-4/6 m-auto space-y-5 items-center p-20">
+
+      <div>
+        <label for="title" class="mr-3">Title: </label>
+        <input type="text" class="border-2 rounded-xl text-gray-500 placeholder:w-fit px-3" value="<%= title %>"
+          name="title">
+      </div>
+      <div>
+        <label for="user" class="mr-3">User: </label>
+        <input type="text" name="user" class="border-2 rounded-xl text-gray-500 placeholder:w-fit px-3">
+      </div>
+      <div class="flex space-x-10">
+        <button type="submit" class="flex m-auto" name="opt" value="del"><img src="icons/delete.png" alt="Add"></button>
+        <button type="submit" class="flex m-auto" name="opt" value="add"><img src="icons/add.png" alt="delete"></button>
+      </div>
+
+    </form>
+
+    <% if(locals.msg) { %>
+    <p><%= msg %></p>
+    <% } %>
+
+  </div>
+
+
+  </body>
+
+  </html>
